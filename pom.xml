@@ -121,6 +121,12 @@
             <artifactId>j2v8_${j2v8.os}</artifactId>
             <version>${j2v8.version}</version>
         </dependency>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.12</version>
+            <scope>test</scope>
+        </dependency>
     </dependencies>
 
 </project>

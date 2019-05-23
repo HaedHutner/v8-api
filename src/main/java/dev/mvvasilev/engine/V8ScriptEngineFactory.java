@@ -9,23 +9,27 @@ import java.util.Objects;
 
 public class V8ScriptEngineFactory implements ScriptEngineFactory {
 
-    private static final String ENGINE = "v8";
+    public static final String ENGINE = "v8";
 
-    private static final String ENGINE_VERSION = V8.getV8Version();
+    public static final String ENGINE_VERSION = "5.4.500.45";
 
-    private static final String FILENAME = "js";
+    public static final String FILENAME = "js";
 
-    private static final String LANGUAGE = "javascript";
+    public static final String LANGUAGE = "javascript";
 
-    private static final String LANGUAGE_VERSION = "ECMAScript 6+";
+    public static final String LANGUAGE_VERSION = "ECMAScript 6+";
 
-    private static final String NAME = "v8";
+    public static final String NAME = "v8";
 
-    private static final List<String> LANGUAGE_EXTENSIONS = List.of("js");
+    public static final List<String> LANGUAGE_EXTENSIONS = List.of("js");
 
-    private static final List<String> MIME_TYPES = List.of("application/javascript");
+    public static final List<String> MIME_TYPES = List.of("application/javascript");
 
-    private static final List<String> NAMES = List.of("v8");
+    public static final List<String> NAMES = List.of("v8");
+
+
+    public V8ScriptEngineFactory() {
+    }
 
     @Override
     public String getEngineName() {
@@ -123,6 +127,6 @@ public class V8ScriptEngineFactory implements ScriptEngineFactory {
 
     @Override
     public ScriptEngine getScriptEngine() {
-        return new V8ScriptEngine();
+        return new V8ScriptEngine(this, V8.createV8Runtime());
     }
 }

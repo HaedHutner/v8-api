@@ -1,11 +1,14 @@
 package dev.mvvasilev;
 
+import com.eclipsesource.v8.V8;
+
+import javax.script.ScriptEngineManager;
+
 public class Main {
 
     public static void main(String[] args) {
-        System.out.println("Os name: " + System.getProperty("os.name"));
-        System.out.println("Os arch: " + System.getProperty("os.arch"));
-        System.out.println("Os version: " + System.getProperty("os.version"));
+        V8 v8Runtime = V8.createV8Runtime();
+        System.out.println(V8.getV8Version());
     }
 
 }
